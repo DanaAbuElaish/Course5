@@ -68,7 +68,7 @@ int main() {
 
 // ****************************************************************** 2 ***************************************************************************
 // ***************************************************** Print All Prime Numbers From 1 To N ******************************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -127,3 +127,90 @@ int main() {
 }
 
 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 3 *********************************************************************
+// ************************************************************* Perfect Number ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+bool funcIsPerfectNumber(int number) {
+
+	int sum = 0;
+
+	for (int i = 1; i < number; i++) {
+
+		if (number % i == 0) {
+			sum += i;
+		}
+	}
+
+	//if (sum == number)
+	//	return 1;
+	//else return 0;
+
+	return sum == number;
+
+}
+
+
+void funcPrintPerfectNumber(int number ) {
+
+	if (funcIsPerfectNumber(number))
+		cout << number << " , is a perfect Number\n";
+	else
+		cout << number << " , is not a perfect Number\n";
+}
+
+
+
+int main() {
+
+	funcPrintPerfectNumber(funcReadPositiveNumber("Please Enter a Positive Number : "));
+
+}
