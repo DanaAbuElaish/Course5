@@ -1,0 +1,21 @@
+digraph SequenceDiagram {
+  rankdir=LR;
+  size="8";
+  node [shape=rect];
+
+  "User" [label="User"];
+  "System" [label="System"];
+  "Post" [label="Post"];
+  "Database" [label="Database"];
+
+  "User" -> "System" [label="1: Login()"];
+  "System" -> "Database" [label="2: Validate credentials"];
+  "Database" -> "System" [label="3: Return success"];
+
+  "User" -> "System" [label="4: CreatePost(content)"];
+  "System" -> "Post" [label="5: Instantiate Post object"];
+  "Post" -> "Database" [label="6: Save Post"];
+  "Database" -> "Post" [label="7: Confirm save"];
+  "Post" -> "System" [label="8: Post Created"];
+  "System" -> "User" [label="9: Show confirmation"];
+}
