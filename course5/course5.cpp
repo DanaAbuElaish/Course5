@@ -434,7 +434,7 @@ int main() {
 
 // *********************************************************************** 7 *********************************************************************
 // ************************************************************* Reverse Number ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -473,4 +473,70 @@ int funcPrintDigits(int number) {
 
 int main() {
 	cout << "\nReverse Number = " << funcPrintDigits(funcReadPositiveNumber("\nPlease , Enter a positive number : ")) << endl;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 8 *********************************************************************
+// ************************************************************* Digit Frequency ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+int funcCountDigitFrequeny(short digitToCheck, int number) {
+	int counter = 0, remainder = 0;
+
+	while (number > 0) {
+		remainder = number % 10;
+		number = number / 10;
+
+		if (digitToCheck == remainder)
+			counter++;
+	}
+	return counter;
+}
+
+
+
+int main() {
+
+	int number = funcReadPositiveNumber("Please Enter a Positive Number : ");
+	short digitToCheck = funcReadPositiveNumber("Enter a Number To check How many in this number : ");
+	cout << digitToCheck << " , is frequency " << funcCountDigitFrequeny(digitToCheck, number) << " Time(s)";
 }
