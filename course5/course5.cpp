@@ -372,7 +372,7 @@ int main() {
 
 // *********************************************************************** 6 *********************************************************************
 // ************************************************************* Sum Of Digits ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -411,4 +411,66 @@ int funcPrintDigits(int number) {
 int main() {
 
 	cout << "Sum Of Digits = " << funcPrintDigits(funcReadPositiveNumber("Please Enter a Positive Number : ")) << endl;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 7 *********************************************************************
+// ************************************************************* Reverse Number ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+
+int funcPrintDigits(int number) {
+
+	float remainder = 0, number2 = 0;
+
+	while (number > 0) {
+		remainder = number % 10;
+		number = number / 10;
+		number2 = number2 * 10 + remainder;
+	}
+
+	return number2;
+}
+
+
+int main() {
+	cout << "\nReverse Number = " << funcPrintDigits(funcReadPositiveNumber("\nPlease , Enter a positive number : ")) << endl;
 }
