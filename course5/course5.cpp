@@ -497,7 +497,7 @@ int main() {
 
 // *********************************************************************** 8 *********************************************************************
 // ************************************************************* Digit Frequency ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -539,4 +539,83 @@ int main() {
 	int number = funcReadPositiveNumber("Please Enter a Positive Number : ");
 	short digitToCheck = funcReadPositiveNumber("Enter a Number To check How many in this number : ");
 	cout << digitToCheck << " , is frequency " << funcCountDigitFrequeny(digitToCheck, number) << " Time(s)";
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 9 *********************************************************************
+// ************************************************************* Digits Frequency ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+int funcCountDigitFrequeny(short digitToCheck, int number) {
+	int counter = 0, remainder = 0;
+
+	while (number > 0) {
+		remainder = number % 10;
+		number = number / 10;
+
+		if (digitToCheck == remainder)
+			counter++;
+	}
+	return counter;
+}
+
+void funcPrintAllDigitsFrequency(int number) {
+
+
+	for (int i = 1; i < 10; i++) {
+
+		short digitFrequency = funcCountDigitFrequeny(i, number);
+
+		if (digitFrequency > 0) {
+			cout << "\nDigit : " << i << " ,is frequency :" << funcCountDigitFrequeny(i, number) << endl;
+		}
+
+		//		cout << "Digit " << i << " is frequency " << funcCountDigitFrequeny(i, number) << " Time(s)\n";
+	}
+}
+
+
+int main() {
+
+	funcPrintAllDigitsFrequency(funcReadPositiveNumber("Please , Enter a positive number : "));
 }
