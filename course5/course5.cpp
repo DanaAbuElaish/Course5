@@ -235,7 +235,7 @@ int main() {
 
 // *********************************************************************** 4 *********************************************************************
 // ************************************************************* Perfect Number from 1 To N ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -287,4 +287,67 @@ void funcPrintPerfectNumber(int number) {
 int main() {
 
 	funcPrintPerfectNumber(funcReadPositiveNumber("Please Enter a Positive Number : "));
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 5 *********************************************************************
+// ************************************************************* Print Digits In A Reversed Order ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+void funcPrintDigits(int number) {
+
+	float remainder = 0;
+
+	while (number > 0) {
+		remainder = number % 10;
+		number = number / 10;
+		cout << remainder << endl;
+	}
+}
+
+
+int main() {
+
+	funcPrintDigits(funcReadPositiveNumber("Please , Enter a positive Number : "));
+
 }
