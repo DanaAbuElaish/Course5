@@ -157,7 +157,7 @@ int main() {
 
 // *********************************************************************** 3 *********************************************************************
 // ************************************************************* Perfect Number ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -213,4 +213,78 @@ int main() {
 
 	funcPrintPerfectNumber(funcReadPositiveNumber("Please Enter a Positive Number : "));
 
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 4 *********************************************************************
+// ************************************************************* Perfect Number from 1 To N ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+
+bool funcIsPerfectNumber(int number) {
+
+	int sum = 0;
+
+	for (int i = 1; i < number; i++) {
+
+		if (number % i == 0) {
+			sum += i;
+		}
+
+	}
+
+	return sum == number;
+}
+
+
+void funcPrintPerfectNumber(int number) {
+
+	for (int i = 1; i <= number; i++) {
+
+		if (funcIsPerfectNumber(i))
+			cout << i << endl;
+	}
+}
+
+
+int main() {
+
+	funcPrintPerfectNumber(funcReadPositiveNumber("Please Enter a Positive Number : "));
 }
