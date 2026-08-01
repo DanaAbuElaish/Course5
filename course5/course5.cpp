@@ -642,7 +642,7 @@ int main() {
 
 // *********************************************************************** 10 *********************************************************************
 // ************************************************************* Print Digits In Order ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -697,3 +697,4 @@ int main() {
 
 	funcPrintNumberInOrder(funcPrintDigits(funcReadPositiveNumber("Please , Enter a positive number : ")));
 }
+*/
