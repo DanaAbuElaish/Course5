@@ -1196,7 +1196,7 @@ int main() {
 
 	// ************************************************************* 18 ***********************************************
 	// *********************************************************** Encrypt \ Decrypt Text *********************************************************************
-	
+	/*
 	#include <iostream>
 	#include <fstream>
 	#include <string>
@@ -1242,4 +1242,50 @@ int main() {
 		cout << "\nText                :   " << text << endl;
 		cout << "Text After Encryption : " << afterEncryption << endl;
 		cout << "Text After Decryption : " << afterDecryption << endl;
+	}
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// ************************************************************* 19 ***********************************************
+	// *********************************************************** Random Numbers from 1 To 10 *********************************************************************
+	
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	#include <vector>
+	#include <iomanip>
+	#include <cstdlib>
+	using namespace std;
+
+	int RandomNumber(int From, int To)
+	{
+		int randNum = rand() % (To - From + 1) + From;
+		return randNum;
+	}
+
+
+	int main() {
+
+		srand((unsigned)time(NULL));
+
+		for (int i = 1; i <= 3; i++) {
+			cout << RandomNumber(1, 10) << endl;
+		}
 	}
