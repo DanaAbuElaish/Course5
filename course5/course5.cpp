@@ -1311,7 +1311,7 @@ int main() {
 
 	// ************************************************************* 20 ***********************************************
 	// ******************************************* Random Small Letter , Capital Letter , Special Character and digit in order ******************************************************
-	
+	/*
 	#include <iostream>
 	#include <fstream>
 	#include <string>
@@ -1354,3 +1354,4 @@ int main() {
 		cout << funcGetRandomCharacter(enCharType::digit) << endl;
 
 	}
+	*/
