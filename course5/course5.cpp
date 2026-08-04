@@ -1125,7 +1125,7 @@ int main() {
 
 	// *********************************************************************** 17 *********************************************************************
 	// ************************************************************* Guess a 3 Letters Password ***********************************************
-	
+	/*
 	#include <iostream>
 	#include <fstream>
 	#include <string>
@@ -1171,4 +1171,75 @@ int main() {
 	int main() {
 
 		funcGuessPassword(funcReadThreeLetters());
+	}
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// ************************************************************* 18 ***********************************************
+	// *********************************************************** Encrypt \ Decrypt Text *********************************************************************
+	
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	#include <vector>
+	#include <iomanip>
+	using namespace std;
+
+
+	string funcReadText() {
+
+		string text = "";
+		cout << "Enter a Text : ";
+		getline(cin, text);
+		return text;
+	}
+
+	string funcEncryptText(string text, short encryptionKey) {
+
+		for (int i = 0; i < text.length(); i++) {
+			text[i] = text[i] + char(encryptionKey);
+		}
+
+		return text;
+	}
+
+	string funcDecryptText(string text, short encryptionKey) {
+
+		for (int i = 0; i < text.length(); i++) {
+			text[i] = text[i] - char(encryptionKey);
+		}
+
+		return text;
+	}
+
+
+	int main() {
+
+		const short encryptionKey = 2;
+		string text = funcReadText();
+		string afterEncryption = funcEncryptText(text, encryptionKey);
+		string afterDecryption = funcDecryptText(afterEncryption, encryptionKey);
+
+		cout << "\nText                :   " << text << endl;
+		cout << "Text After Encryption : " << afterEncryption << endl;
+		cout << "Text After Decryption : " << afterDecryption << endl;
 	}
