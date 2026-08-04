@@ -720,7 +720,7 @@ int main() {
 
 // *********************************************************************** 11 *********************************************************************
 // ************************************************************* Palindrome Number ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -774,4 +774,75 @@ int main() {
 	else {
 		cout << endl << number << " , no it is NOT a Palindrome Number..\n";
 	}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 12 *********************************************************************
+// ************************************************************* Inverted Number Pattern ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+//void funcPrintInvertedNumberPattern(int number) {
+//	cout << "\n";
+//	for (int i = number; i >= 1; i--) {
+//		for (int j = 1; j <= i; j++) {
+//			cout << i;
+//		}
+//		cout << endl;
+//	}
+//}
+//
+
+void funcPrintInvertedNumberPattern(int number) {
+	for (int i = number; i >= 1; i--) {
+		for (int j = 1; j <= i; j++) {
+			cout << i;
+		}
+		cout << endl;
+	}
+}
+
+int main() {
+
+	funcPrintInvertedNumberPattern(funcReadPositiveNumber("Please , Enter a Positive Number : "));
 }
