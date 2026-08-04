@@ -990,7 +990,7 @@ int main() {
 
 // *********************************************************************** 15 *********************************************************************
 // ************************************************************* Letter Pattern ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -1030,3 +1030,76 @@ int main() {
 	funcPrintLetterPattern(funcReadPositiveNumber("Enter a positive number : "));
 
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 16 *********************************************************************
+// ************************************************************* All Words From AAA to ZZZ ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+void funcPrintWordsFromAAAToZZZ() {
+
+	for (int i = 65; i <= 90; i++) {
+		for (int j = 65; j <= 90; j++) {
+			for (int k = 65; k <= 90; k++) {
+				cout << char(i) << char(j) << char(k) << endl;
+			}
+
+		}
+
+		cout << "\n--------------------------------------\n";
+	}
+}
+
+void funcPrintWordsFromAAAToZZZ2() {
+
+	string word = "";
+
+	for (int i = 65; i <= 90; i++) {
+		for (int j = 65; j <= 90; j++) {
+			for (int k = 65; k <= 90; k++) {
+
+				word = word + char(i);
+				word = word + char(j);
+				word = word + char(k);
+				cout << word << endl;
+				word = "";
+			}
+		}
+		cout << "\n------------------------------------------------\n";
+	}
+}
+
+
+
+int main() {
+
+	//funcPrintWordsFromAAAToZZZ();
+	funcPrintWordsFromAAAToZZZ2();
+
+	}
