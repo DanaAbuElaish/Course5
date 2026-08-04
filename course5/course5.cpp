@@ -1265,7 +1265,7 @@ int main() {
 
 	// ************************************************************* 19 ***********************************************
 	// *********************************************************** Random Numbers from 1 To 10 *********************************************************************
-	
+	/*
 	#include <iostream>
 	#include <fstream>
 	#include <string>
@@ -1288,4 +1288,69 @@ int main() {
 		for (int i = 1; i <= 3; i++) {
 			cout << RandomNumber(1, 10) << endl;
 		}
+	}
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// ************************************************************* 20 ***********************************************
+	// ******************************************* Random Small Letter , Capital Letter , Special Character and digit in order ******************************************************
+	
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	#include <vector>
+	#include <iomanip>
+	#include <cstdlib>
+	using namespace std;
+
+	int RandomNumber(int From, int To)
+	{
+		int randNum = rand() % (To - From + 1) + From;
+		return randNum;
+	}
+
+	enum enCharType{smallLetter = 1 , capitalLetter = 2 , specialCharacter = 3 , digit = 4};
+
+
+	char funcGetRandomCharacter(enCharType charType) {
+
+		switch (charType) {
+		case enCharType::capitalLetter:
+			return RandomNumber(65, 90);
+		case enCharType::smallLetter:
+			return RandomNumber(97, 122);
+		case enCharType::specialCharacter:
+			return RandomNumber(33, 47);
+		case enCharType::digit:
+			return RandomNumber(48, 57);
+		}
+	}
+
+
+	int main() {
+
+		srand((unsigned)time(NULL));
+
+		cout << funcGetRandomCharacter(enCharType::capitalLetter) << endl;
+		cout << funcGetRandomCharacter(enCharType::smallLetter) << endl;
+		cout << funcGetRandomCharacter(enCharType::specialCharacter) << endl;
+		cout << funcGetRandomCharacter(enCharType::digit) << endl;
+
 	}
