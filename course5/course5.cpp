@@ -870,7 +870,7 @@ int main() {
 
 // *********************************************************************** 13 *********************************************************************
 // *************************************************************  Number Pattern ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -907,4 +907,65 @@ void funcPrintNumberPattern(int number) {
 int main() {
 
 	funcPrintNumberPattern(funcReadPositiveNumber("Enter positive number : "));
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 14 *********************************************************************
+// ************************************************************* Inverted Letter Pattern ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+void funcPrintInvertedLLetterPattern(int number) {
+	cout << "\n";
+	for (int i =64+ number; i >= 65; i--) {
+		for (int j = 65; j <= i; j++) {
+			cout << char(i);
+		}
+		cout << endl;
+	}
+}
+
+
+int main() {
+
+	funcPrintInvertedLLetterPattern(funcReadPositiveNumber("Please , Enter a Positive Number : "));
 }
