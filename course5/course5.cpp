@@ -1054,7 +1054,7 @@ int main() {
 
 // *********************************************************************** 16 *********************************************************************
 // ************************************************************* All Words From AAA to ZZZ ***********************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -1102,4 +1102,73 @@ int main() {
 	//funcPrintWordsFromAAAToZZZ();
 	funcPrintWordsFromAAAToZZZ2();
 
+	}
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// *********************************************************************** 17 *********************************************************************
+	// ************************************************************* Guess a 3 Letters Password ***********************************************
+	
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	#include <vector>
+	#include <iomanip>
+	using namespace std;
+
+	string funcReadThreeLetters() {
+
+		string letters = "";
+		cout << "Please Enter 3 Capital Letters : ";
+		cin >> letters;
+		return letters;
+
+	}
+
+	bool funcGuessPassword(string letters) {
+
+		string word = "";
+		int counter = 0;
+
+		for (int i = 65; i <= 90; i++) {
+			for (int j = 65; j <= 90; j++) {
+				for (int k = 65; k <= 90; k++) {
+					word = word + char(i);
+					word = word + char(j);
+					word = word + char(k);
+					counter++;
+					cout << "\nTrial [" << counter << "] : " << word;
+
+					if (letters == word) {
+						cout << "\n\nPassword is " << letters << endl;
+						cout << "Found After : " << counter << " Trial(s)" << endl;
+						return true;
+					}
+					word = "";
+				}
+			}
+		}
+		return false;
+	}
+
+	int main() {
+
+		funcGuessPassword(funcReadThreeLetters());
 	}
