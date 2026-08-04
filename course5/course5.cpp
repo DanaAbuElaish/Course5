@@ -698,3 +698,80 @@ int main() {
 	funcPrintNumberInOrder(funcPrintDigits(funcReadPositiveNumber("Please , Enter a positive number : ")));
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *********************************************************************** 11 *********************************************************************
+// ************************************************************* Palindrome Number ***********************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+
+
+int funcPrintDigits(int number) {
+
+	float remainder = 0, number2 = 0;
+
+	while (number > 0) {
+		remainder = number % 10;
+		number = number / 10;
+		number2 = number2 * 10 + remainder;
+	}
+
+	return number2;
+}
+
+
+bool funcIsPalindromeNumber(int number) {
+
+	return number == funcPrintDigits(number);
+}
+
+
+
+int main() {
+	int number = funcReadPositiveNumber("Please , Enter a Positive Number : \n");
+
+	if (funcIsPalindromeNumber(number)) {
+		cout << endl << number << " , is a Palindrome Number..\n";
+	}
+	else {
+		cout << endl << number << " , no it is NOT a Palindrome Number..\n";
+	}
+}
