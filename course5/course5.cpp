@@ -1891,7 +1891,7 @@ int main() {
 
 // ************************************************************* 27 *********************************************************
 // ***************************************************** Average Of Random Array ******************************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -1949,4 +1949,89 @@ int main() {
 	funcPrintArray(arr, arrLength);
 
 	cout << "\nAverage of Array Elements = " << funcSumOfElementsInArray(arr, arrLength)/arrLength << endl;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************* 28 *********************************************************
+// ***************************************************** Copy Array ******************************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <cstdlib>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+
+}
+
+void funcFillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+
+	cout << "Please , Enter the array length : ";
+	cin >> arrLength;
+
+	for (int i = 0; i < arrLength; i++) {
+		arr[i] = RandomNumber(1, 100);
+	}
+}
+
+
+void funcPrintArray(int arr[100], int arrLength) {
+
+	cout << "\nArray Elements : ";
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << "  ";
+	}
+}
+
+
+void funcCopyArray(int arrSource[100], int arrDestination[100], int arrLength) {
+
+	for (int i = 0; i < arrLength; i++) {
+		arrDestination[i] = arrSource[i];
+	}
+}
+
+int main() {
+
+	srand((unsigned)time(NULL));
+	int arr1[100], arrLength,  arr2[100];
+
+	funcFillArrayWithRandomNumbers(arr1, arrLength);
+
+	funcCopyArray(arr1, arr2, arrLength);
+
+
+	cout << "\nArray 1 Elements : ";
+	funcPrintArray(arr1, arrLength);
+
+	funcCopyArray(arr1, arr2, arrLength);
+	cout << "\n\nCopied Array : ";
+	funcPrintArray(arr2, arrLength);
+	cout << endl;
+
 }
