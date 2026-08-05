@@ -1355,3 +1355,107 @@ int main() {
 
 	}
 	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************* 21 *********************************************************
+// ******************************************************** Generate Keys ******************************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <cstdlib>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+
+enum enCharType { smallLetter = 1, capitalLetter = 2, specialCharacter = 3, digit = 4 };
+
+
+char funcGetRandomCharacter(enCharType charType) {
+
+	switch (charType) {
+	case enCharType::capitalLetter:
+		return RandomNumber(65, 90);
+	case enCharType::smallLetter:
+		return RandomNumber(97, 122);
+	case enCharType::specialCharacter:
+		return RandomNumber(33, 47);
+	case enCharType::digit:
+		return RandomNumber(48, 57);
+	}
+}
+
+
+short funcReadPositiveNumber(string message) {
+
+	short number = 0;
+
+	do {
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+string funcGenerateWord(enCharType charType, short length) {
+
+	string word = "";
+	for (int i = 1; i <= length; i++) {
+
+
+		word += funcGetRandomCharacter(charType);
+	}
+
+	return word;
+}
+
+string funcGenerateKey() {
+
+	string key = "";
+	enCharType charType;
+	key += funcGenerateWord(enCharType::capitalLetter, 4) + "-" + funcGenerateWord(enCharType::capitalLetter, 4) + "-" + funcGenerateWord(enCharType::capitalLetter, 4) + "-" + funcGenerateWord(enCharType::capitalLetter, 4);
+
+	return key;
+}
+
+void funcGenerateKeys(short numberOfKeys) {
+
+	for (int i = 1; i <= numberOfKeys; i++) {
+		cout << "Key [" << i << "] : ";
+		cout << funcGenerateKey() << endl;
+	}
+}
+
+
+
+int main() {
+	srand((unsigned)time(NULL));
+	funcGenerateKeys(funcReadPositiveNumber("Please , Enter a Positive Number :"));
+
+}
