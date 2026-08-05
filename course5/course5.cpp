@@ -1482,7 +1482,7 @@ int main() {
 
 // ************************************************************* 22 *********************************************************
 // ***************************************************** Repeated Elements Count In Array ******************************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -1545,4 +1545,70 @@ int main() {
 	funcPrintArrayElements(arr, arrLength);
 	int numberToCheck = funcReadPositiveNumber("\n\nPlease , Enter a positive number : ");
 	cout << endl << numberToCheck << " , is repeated " << funcTimesRepeated(arr, arrLength, numberToCheck) << " , times\n";
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************* 23 *********************************************************
+// ***************************************************** Fill Array With Random Numbers From 1 To 100 ******************************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <cstdlib>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+
+}
+
+void funcFillArrayWithRandomNumbers(int arr[100], int &arrLength) {
+
+	cout << "Please , Enter the array length : ";
+	cin >> arrLength;
+
+	for (int i = 0; i < arrLength; i++) {
+		arr[i] = RandomNumber(1, 100);
+	}
+}
+
+
+void funcPrintArray(int arr[100], int arrLength) {
+
+	cout << "\n\nArray Elements : ";
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << "  ";
+	}
+}
+
+int main() {
+
+	srand((unsigned)time(NULL));
+	int arr[100], arrLength;
+
+	funcFillArrayWithRandomNumbers(arr, arrLength);
+	funcPrintArray(arr, arrLength);
 }
