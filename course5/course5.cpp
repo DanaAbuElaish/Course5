@@ -1376,7 +1376,7 @@ int main() {
 
 // ************************************************************* 21 *********************************************************
 // ******************************************************** Generate Keys ******************************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -1458,4 +1458,91 @@ int main() {
 	srand((unsigned)time(NULL));
 	funcGenerateKeys(funcReadPositiveNumber("Please , Enter a Positive Number :"));
 
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************* 22 *********************************************************
+// ***************************************************** Repeated Elements Count In Array ******************************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <cstdlib>
+using namespace std;
+
+int funcReadPositiveNumber(string message) {
+
+	int number = 0;
+
+	do {
+		cout << message;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+void funcReadArray(int arr[100], int &arrLength) {
+
+	cout << "Enter Number Of Elements : ";
+	cin >> arrLength;
+	cout << endl;
+
+	cout << "\nPlease , Enter Array Elements : \n";
+	for (int i = 0; i < arrLength; i++) {
+		cout << "Enter Element [" << i + 1 << "] : ";
+		cin >> arr[i];
+	}
+}
+
+void funcPrintArrayElements(int arr[100], int arrLength) {
+	cout << "\nArray Elements : ";
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << "  ";
+	}
+}
+
+int funcTimesRepeated(int arr[100], int arrLength, int numberToCheck) {
+
+	int counter = 0;
+
+	for (int i = 0; i < arrLength; i++) {
+		if (numberToCheck == arr[i])
+			counter++;
+	}
+
+	return counter;
+}
+
+
+int main() {
+
+	int arr[100], arrLength;
+
+	funcReadArray(arr, arrLength);
+	funcPrintArrayElements(arr, arrLength);
+	int numberToCheck = funcReadPositiveNumber("\n\nPlease , Enter a positive number : ");
+	cout << endl << numberToCheck << " , is repeated " << funcTimesRepeated(arr, arrLength, numberToCheck) << " , times\n";
 }
