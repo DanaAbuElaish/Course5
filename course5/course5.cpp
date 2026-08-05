@@ -1973,7 +1973,7 @@ int main() {
 
 // ************************************************************* 28 *********************************************************
 // ***************************************************** Copy Array ******************************************************
-
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -2033,5 +2033,113 @@ int main() {
 	cout << "\n\nCopied Array : ";
 	funcPrintArray(arr2, arrLength);
 	cout << endl;
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************* 29 *********************************************************
+// ***************************************************** Copy Only Prime Numbers ******************************************************
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <cstdlib>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+
+}
+
+
+enum enPrimeNotPrime { Prime = 1, NotPrime = 2 };
+
+
+
+enPrimeNotPrime funcCheckPrimeNumbers(int number) {
+
+	int halfNumber = round(number / 2);
+
+	for (int i = 2; i <= halfNumber; i++) {
+		if (number % i == 0)
+			return enPrimeNotPrime::NotPrime;
+	}
+	return enPrimeNotPrime::Prime;
+}
+
+
+void funcFillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+
+	cout << "Please , Enter the array length : ";
+	cin >> arrLength;
+
+	for (int i = 0; i < arrLength; i++) {
+		arr[i] = RandomNumber(1, 100);
+	}
+}
+
+void funcCopyOnlyAllPrimeNumbers(int arrSource[100] , int arrDestenation[100] , int arr1Length , int &arr2Length) {
+
+	int counter = 0;
+	for (int i = 0; i <= arr1Length; i++) {
+		if (funcCheckPrimeNumbers(arrSource[i]) == enPrimeNotPrime::Prime) {
+			arrDestenation[counter] = arrSource[i];
+			counter++;
+		}
+	}
+	arr2Length = --counter;
+}
+
+
+void funcPrintArray(int arr[100], int arrLength) {
+
+	cout << "\nArray Elements : ";
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << "  ";
+	}
+}
+
+
+
+int main(){
+
+	srand((unsigned)time(NULL));
+
+	int arr1[100], arr1Length, arr2[100], arr2Length;
+
+	funcFillArrayWithRandomNumbers(arr1, arr1Length);
+
+	funcCopyOnlyAllPrimeNumbers(arr1, arr2, arr1Length, arr2Length);
+
+	cout << "\n\n***** Array 1 Elements *****";
+	funcPrintArray(arr1, arr1Length);
+
+	cout << endl << endl << endl;
+
+	cout << "***** Prime Numbers *****";
+	funcPrintArray(arr2, arr2Length);
+
+	cout << "\n\n";
 
 }
